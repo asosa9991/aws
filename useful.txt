@@ -1,0 +1,19 @@
+START HTTP SERVER
+
+#!/bin/bash
+yum update -y
+yum install -y httpd
+yum install -y wget
+
+cd /var/www/html
+// ADD ANY HTML FILES
+
+service httpd start
+
+
+
+STRESS TEST
+
+sudo amazon-linux-extras install epel -y
+sudo yum install -y stress
+stress --cpu 2 --timeout 300
